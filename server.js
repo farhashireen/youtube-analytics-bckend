@@ -5,7 +5,8 @@ const app = express();
 
 app.use(cors());
 
-const YT_API_KEY = 'AIzaSyDNKr130WLJkf7vtLydgYYXP2tSRZDoEWM'; 
+const YT_API_KEY = process.env.YT_API_KEY;
+
 
 app.get('/channel', async (req, res) => {
   const { name } = req.query;
