@@ -1,0 +1,2 @@
+# .env file
+YT_API_KEY=AIzaSyAztj--p4Iy8ke6elZg8uP2zdvDBFXxmS4
