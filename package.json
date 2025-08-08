@@ -2,7 +2,7 @@
   "name": "youtube-analytics-backend",
   "version": "1.0.0",
   "description": "YouTube analytics backend API",
-  "main": "server.js",   // ✅ Make sure this matches your actual file name
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
