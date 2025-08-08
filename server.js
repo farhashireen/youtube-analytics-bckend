@@ -4,7 +4,7 @@ const axios = require('axios');
 const cors = require('cors');
 
 const app = express();
-app.use(cors({ origin: 'https://farhashireen.github.io' })); // ✅ Your frontend origin
+app.use(cors({ origin: 'https://farhashireen.github.io' }));
 
 const YT_API_KEY = process.env.YT_API_KEY;
 
@@ -12,7 +12,6 @@ app.get('/channel', async (req, res) => {
   const { name } = req.query;
 
   try {
-    // Get channel ID
     const searchRes = await axios.get('https://www.googleapis.com/youtube/v3/search', {
       params: {
         part: 'snippet',
@@ -24,7 +23,6 @@ app.get('/channel', async (req, res) => {
 
     const channelId = searchRes.data.items[0].snippet.channelId;
 
-    // Get channel stats
     const statsRes = await axios.get('https://www.googleapis.com/youtube/v3/channels', {
       params: {
         part: 'snippet,statistics',
@@ -33,7 +31,6 @@ app.get('/channel', async (req, res) => {
       }
     });
 
-    // Get recent videos
     const videoRes = await axios.get('https://www.googleapis.com/youtube/v3/search', {
       params: {
         part: 'snippet',
